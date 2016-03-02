@@ -1,6 +1,6 @@
 # WAV decoder
 
-> #UNRELEASED
+> UNRELEASED
 
 This repository contains a fork of [wav-decoder](https://github.com/mohayonao/wav-decoder) made by [Nao Yonamine](mailto:mohayonao@gmail.com), an universal WAV data decoder.
 
