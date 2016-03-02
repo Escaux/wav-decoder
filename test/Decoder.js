@@ -1,7 +1,7 @@
 "use strict";
 
 const assert = require("assert");
-const Decoder = require("../lib/Decoder");
+const Decoder = require("../");
 
 let closeTo = (actual, expected, delta) => Math.abs(actual - expected) <= delta;
 
@@ -22,48 +22,11 @@ let wavFile = new Buffer([
 ]);
 
 describe("Decoder", function() {
-  describe(".decode(buffer: ArrayBuffer|Buffer): Promise<AudioData>", function() {
+  describe(".decode(buffer: ArrayBuffer): Promise<AudioData>", function() {
     it("works with ArrayBuffer", function() {
       let buffer = new Uint8Array(wavFile).buffer;
 
       return Decoder.decode(buffer).then((audioData) => {
-        assert(audioData.sampleRate === 44100);
-        assert(closeTo(audioData.channelData[0][0], -0.5, 1e-4));
-        assert(closeTo(audioData.channelData[0][1],  1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][0], -1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][1],  0.5, 1e-4));
-      });
-    });
-    it("works with Buffer", function() {
-      let buffer = wavFile;
-
-      return Decoder.decode(buffer).then((audioData) => {
-        assert(audioData.sampleRate === 44100);
-        assert(closeTo(audioData.channelData[0][0], -0.5, 1e-4));
-        assert(closeTo(audioData.channelData[0][1],  1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][0], -1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][1],  0.5, 1e-4));
-      });
-    });
-  });
-  describe("#decode(buffer: ArrayBuffer|Buffer): Promise<AudioData>", function() {
-    it("works with ArrayBuffer", function() {
-      let buffer = new Uint8Array(wavFile).buffer;
-      let decoder = new Decoder();
-
-      return decoder.decode(buffer).then((audioData) => {
-        assert(audioData.sampleRate === 44100);
-        assert(closeTo(audioData.channelData[0][0], -0.5, 1e-4));
-        assert(closeTo(audioData.channelData[0][1],  1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][0], -1.0, 1e-4));
-        assert(closeTo(audioData.channelData[1][1],  0.5, 1e-4));
-      });
-    });
-    it("works with Buffer", function() {
-      let buffer = wavFile;
-      let decoder = new Decoder();
-
-      return decoder.decode(buffer).then((audioData) => {
         assert(audioData.sampleRate === 44100);
         assert(closeTo(audioData.channelData[0][0], -0.5, 1e-4));
         assert(closeTo(audioData.channelData[0][1],  1.0, 1e-4));
