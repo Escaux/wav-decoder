@@ -10,8 +10,6 @@
     "url": "https://github.com/mohayonao/wav-decoder/issues"
   },
   "dependencies": {
-    "dataview2": "^1.0.0",
-    "inline-worker": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^2.3.4"
@@ -28,7 +26,7 @@
     "wav"
   ],
   "licenses": "MIT",
-  "main": "lib/decoder.js",
+  "main": "lib/Decoder.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mohayonao/wav-decoder.git"
