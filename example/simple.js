@@ -1,20 +1,5 @@
-# WAV decoder
-
-> #UNRELEASED
-
-This repository contains a fork of [wav-decoder](https://github.com/mohayonao/wav-decoder) made by [Nao Yonamine](mailto:mohayonao@gmail.com), an universal WAV data decoder.
-
-## Installation
-
-```shell
-npm install git://github.com/escaux/wav-decoder
-```
-
-## Basic usage
-
-```js
 var fs = require('fs'),
-	WavDecoder = require('wav-decoder');
+	WavDecoder = require('../');
 
 // Wrapper around fs#readFile to return a Promise
 function readFile(filepath) {
@@ -40,11 +25,3 @@ readFile("test.wav")
 	console.log(data.channelData[0]); // Float32Array
 	console.log(data.channelData[1]); // Float32Array
 });
-
-```
-
-## License
-
-MIT
-
-Refactored with ♥ by [Raphael Medaer](mailto:rme@escaux.com)
