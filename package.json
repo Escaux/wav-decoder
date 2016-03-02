@@ -3,6 +3,9 @@
   "description": "universal wav data decoder",
   "version": "1.0.0",
   "author": "Nao Yonamine <mohayonao@gmail.com>",
+  "contributors": [
+    "Raphael Medaer <rme@escaux.com> (https://github.com/rmedaer)"
+  ],
   "bugs": {
     "url": "https://github.com/mohayonao/wav-decoder/issues"
   },
@@ -16,7 +19,6 @@
   "files": [
     "package.json",
     "README.md",
-    "index.js",
     "lib"
   ],
   "homepage": "https://github.com/mohayonao/wav-decoder/",
@@ -26,7 +28,7 @@
     "wav"
   ],
   "licenses": "MIT",
-  "main": "index.js",
+  "main": "lib/decoder.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mohayonao/wav-decoder.git"
